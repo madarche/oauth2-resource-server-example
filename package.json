@@ -1,0 +1,44 @@
+{
+  "name": "oauth2-resource-server-demo",
+  "version": "1.0.0",
+  "description": "OAuth2 Resource Server (RS) demo",
+  "author": "Marc-Aurèle DARCHE",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.18"
+  },
+  "scripts": {
+    "start": "node src/start.js",
+    "start:watch": "nodemon",
+    "test": "jest",
+    "posttest": "npm run lint",
+    "pretest:ci": "npm run lint",
+    "test:ci": "npm run test:coverage",
+    "test:unit": "echo 'NO unit tests'",
+    "test:integration": "jest test/integration",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint --ignore-pattern='!.*.js' .",
+    "lint:fix": "eslint --fix --ignore-pattern='!.*.js' ."
+  },
+  "dependencies": {
+    "@koa/router": "8.0.8",
+    "bunyan": "1.8.12",
+    "convict": "6.0.0",
+    "convict-format-with-validator": "6.0.0",
+    "koa": "2.11.0",
+    "koa-bodyparser": "4.3.0",
+    "koa-helmet": "5.2.0",
+    "openid-client": "3.15.9",
+    "parse-bearer-token": "1.0.1",
+    "toml": "3.0.0",
+    "tracer": "1.1.2",
+    "yargs-parser": "18.1.3"
+  },
+  "devDependencies": {
+    "eslint": "7.4.0",
+    "eslint-config-usecases": "https://github.com/madarche/eslint-config-usecases.git#v3.0.0",
+    "jest": "26.1.0",
+    "nodemon": "2.0.4",
+    "supertest": "4.0.2"
+  }
+}
