@@ -19,6 +19,10 @@ level = "debug"
 issuer_url = 'https://connect.local.test/'
 client_id = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
 client_secret = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+allowed_client_ids = [
+  'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+  'yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy'
+]
 
 
 # vim: ai:ts=2:sw=2:ft=conf

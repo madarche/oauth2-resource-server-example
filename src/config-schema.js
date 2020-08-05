@@ -47,6 +47,11 @@ module.exports = {
             doc: 'Client secret of this OIDC RP',
             format: String,
             default: null
-        }
+        },
+        allowed_client_ids: {
+            doc: 'List of OIDC client IDs',
+            format: Array,
+            default: []
+        },
     }
 }

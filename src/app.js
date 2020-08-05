@@ -6,8 +6,7 @@ const Koa = require('koa')
 
 const logger = require('./lib/logger')
 const errors = require('./lib/errors')
-const BadRequestError = errors.BadRequestError
-const UnauthorizedError = errors.UnauthorizedError
+const {BadRequestError, UnauthorizedError, ForbiddenError} = errors
 
 // It's needed to access app from outside, such as for supertest tests
 // otherwise one gets "Object #<Object> has no method 'address'" in tests
@@ -27,6 +26,8 @@ app.use(async(ctx, next) => {
             ctx.status = 400
         } else if (err instanceof UnauthorizedError) {
             ctx.status = 401
+        } else if (err instanceof ForbiddenError) {
+            ctx.status = 403
         } else {
             // Log all other unexpected errors
             logger.error(err)
