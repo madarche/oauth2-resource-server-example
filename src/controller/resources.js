@@ -46,6 +46,7 @@ async function getAll(ctx, next) {
     // Some async operations could be done here like retrieving items from DBs
     await Promise.resolve()
 
+    ctx.set('Cache-Control', 'private, max-age=3600'); // 1 hour
     ctx.body = [{id: '1'}, {id: '2'}, {id: '3'}]
 }
 
@@ -64,6 +65,7 @@ async function get(ctx, next) {
 
     const resource_id = ctx.params.resource_id
 
+    ctx.set('Cache-Control', 'private, max-age=3600'); // 1 hour
     ctx.body = {id: resource_id}
 }
 
