@@ -49,7 +49,7 @@ async function getAll(ctx, next) {
 
     // To have a different cache value for different tokens
     ctx.set('Vary', 'Authorization')
-    ctx.set('Cache-Control', 'private, max-age=3600') // 1 hour
+    ctx.set('Cache-Control', 'private, must-revalidate, max-age=3600') // 1 hour
     ctx.body = [{id: '1'}, {id: '2'}, {id: '3'}]
 }
 
@@ -70,7 +70,7 @@ async function get(ctx, next) {
 
     // To have a different cache value for different tokens
     ctx.set('Vary', 'Authorization')
-    ctx.set('Cache-Control', 'private, max-age=3600') // 1 hour
+    ctx.set('Cache-Control', 'private, must-revalidate, max-age=3600') // 1 hour
     ctx.body = {id: resource_id}
 }
 
