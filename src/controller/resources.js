@@ -17,6 +17,7 @@ async function getAll(ctx, next) {
 
     const oidc_client = await oidc.getOidcClient()
     const access_token_verify = await oidc_client.introspect(access_token)
+    logger.trace('getAll headers:', ctx.request.headers)
     logger.trace('access_token_verify:', access_token_verify)
     if (!access_token_verify.active) {
         throw new UnauthorizedError('Not an active token')
@@ -46,7 +47,9 @@ async function getAll(ctx, next) {
     // Some async operations could be done here like retrieving items from DBs
     await Promise.resolve()
 
-    ctx.set('Cache-Control', 'private, max-age=3600'); // 1 hour
+    // To have a different cache value for different tokens
+    ctx.set('Vary', 'Authorization')
+    ctx.set('Cache-Control', 'private, max-age=3600') // 1 hour
     ctx.body = [{id: '1'}, {id: '2'}, {id: '3'}]
 }
 
@@ -65,7 +68,9 @@ async function get(ctx, next) {
 
     const resource_id = ctx.params.resource_id
 
-    ctx.set('Cache-Control', 'private, max-age=3600'); // 1 hour
+    // To have a different cache value for different tokens
+    ctx.set('Vary', 'Authorization')
+    ctx.set('Cache-Control', 'private, max-age=3600') // 1 hour
     ctx.body = {id: resource_id}
 }
 
