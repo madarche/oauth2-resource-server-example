@@ -7,8 +7,8 @@ base_url = "https://api.local.test"
 level = "debug"
 #level = "trace"
 # If not defined logger outputs to the console (useful when testing/developing)
-#file_path = "oauth2-resource-server-demo.log"
-#file_path = "/tmp/oauth2-resource-server-demo.log"
+#file_path = "oauth2-resource-server-example.log"
+#file_path = "/tmp/oauth2-resource-server-example.log"
 
 [server]
 #ip = "127.0.0.1"

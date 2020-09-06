@@ -4,7 +4,7 @@ const fs = require('fs')
 const readFile = fs.promises.readFile
 const writeFile = fs.promises.writeFile
 
-const PKG_NAME = 'oauth2-resource-server-demo'
+const PKG_NAME = 'oauth2-resource-server-example'
 const PKG_VERSION = '1.0.0'
 
 const CONFIG_EXAMPLE_FILE_PATH = './config.toml.example'

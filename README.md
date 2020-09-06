@@ -1,7 +1,7 @@
-oauth2-resource-server-demo
-===========================
+oauth2-resource-server-example
+==============================
 
-[![Build Status](https://travis-ci.org/madarche/oauth2-resource-server-demo.svg?branch=master)](https://travis-ci.org/madarche/oauth2-resource-server-demo)
+[![Build Status](https://travis-ci.org/madarche/oauth2-resource-server-example.svg?branch=master)](https://travis-ci.org/madarche/oauth2-resource-server-example)
 
 
 Usage
