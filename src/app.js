@@ -1,6 +1,7 @@
 'use strict'
 
 const helmet = require('koa-helmet')
+const request_logger = require('koa-morgan')
 const bodyParser = require('koa-bodyparser')
 const Koa = require('koa')
 
@@ -13,6 +14,8 @@ const {BadRequestError, UnauthorizedError, ForbiddenError} = errors
 const app = module.exports = new Koa()
 
 app.use(helmet({frameguard: {action: 'deny'}}))
+
+app.use(request_logger('dev')) // output to stdout
 
 // bodyparser offers a jsonLimit protection of the json body of 1mb by default
 app.use(bodyParser({enableTypes: ['json']}))
