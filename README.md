@@ -5,6 +5,7 @@ oauth2-resource-server-example
 
 OAuth2 Resource Server (RS) example
 
+
 Usage
 -----
 
@@ -21,3 +22,12 @@ Then, install the needed packages and start the application:
 npm ci
 npm start
 ```
+
+
+API
+---
+
+The API is defined in the
+[openapi-schema.yml](src/openapi-schema.yml)
+file.
+
