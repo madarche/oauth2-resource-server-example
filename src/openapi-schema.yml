@@ -1,0 +1,67 @@
+
+openapi: 3.0.3
+
+info:
+  title: Resource Server API
+  description: API for retrieving resources
+  version: 1.0.0
+
+servers:
+- url: https://api.local.test
+  description: DEV server
+
+security:
+  - oauth2AccessControl:
+      - openid
+  # - oidcAccessControl:
+  #     - openid
+
+paths:
+
+  /resources:
+    get:
+      summary: >
+        Gets all the resources
+      responses:
+        '200':
+          description: The details of all the resources
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+
+  /resources/{resource_id}:
+    parameters:
+    - name: resource_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: >
+        Gets the referenced resource
+      responses:
+        '200':
+          description: The referenced resource
+          content:
+            application/json:
+              schema:
+                type: object
+
+
+components:
+
+  securitySchemes:
+
+    oauth2AccessControl:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://connect.local.test/auth
+
+    oidcAccessControl:
+      type: openIdConnect
+      openIdConnectUrl: https://connect.local.test/.well-known/openid-configuration
+
