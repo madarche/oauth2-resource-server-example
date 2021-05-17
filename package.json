@@ -30,7 +30,7 @@
     "koa-helmet": "6.0.0",
     "koa-morgan": "1.0.1",
     "openapi-validator-middleware": "3.1.1",
-    "openid-client": "4.2.1",
+    "openid-client": "4.7.3",
     "parse-bearer-token": "1.0.1",
     "toml": "3.0.0",
     "tracer": "1.1.4",
