@@ -1,7 +1,4 @@
 
-[common]
-base_url = "https://api.local.test"
-
 [log]
 #level = "info"
 level = "debug"
@@ -13,7 +10,7 @@ level = "debug"
 [server]
 #ip = "127.0.0.1"
 #ip = "0.0.0.0"
-#port = 9003
+#port = 8014
 
 [oidc]
 issuer_url = 'https://connect.local.test/'

@@ -1,13 +1,6 @@
 'use strict'
 
 module.exports = {
-    common: {
-        base_url: {
-            doc: 'Application base URL',
-            format: 'url',
-            default: 'https://api.local.test/'
-        }
-    },
     log: {
         level: {
             doc: 'Log level',
@@ -29,7 +22,7 @@ module.exports = {
         port: {
             doc: 'Port to bind',
             format: 'port',
-            default: 9003
+            default: 8014
         }
     },
     oidc: {
